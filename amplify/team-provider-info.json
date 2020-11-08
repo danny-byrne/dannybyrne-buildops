@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dannybyrnebuildops-dev-123049-authRole",
+      "UnauthRoleArn": "arn:aws:iam::080851836025:role/amplify-dannybyrnebuildops-dev-123049-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::080851836025:role/amplify-dannybyrnebuildops-dev-123049-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-dannybyrnebuildops-dev-123049-deployment",
+      "UnauthRoleName": "amplify-dannybyrnebuildops-dev-123049-unauthRole",
+      "StackName": "amplify-dannybyrnebuildops-dev-123049",
+      "StackId": "arn:aws:cloudformation:us-west-2:080851836025:stack/amplify-dannybyrnebuildops-dev-123049/5d72fa20-2201-11eb-9428-0231108a70a9",
+      "AmplifyAppId": "dfisbd49itoim"
+    }
+  }
+}
