@@ -76,6 +76,13 @@ export default function CreateEmployee(props) {
           })}
         </ul>
       </Box>
+      <Button
+        variant="outlined"
+        color="primary"
+        onClick={() => addSkill(skill)}
+      >
+        Add Skill
+      </Button>
     </div>
   );
 }
