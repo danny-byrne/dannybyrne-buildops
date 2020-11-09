@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import gql from "graphql-tag";
 import AWSAppSyncClient, { AUTH_TYPE } from "aws-appsync";
 import aws_config from "./aws-exports";
-import { ApolloProvider } from "react-apollo";
+import { ApolloProvider } from "@apollo/client";
 
 export const client = new AWSAppSyncClient({
   url: aws_config.aws_appsync_graphqlEndpoint,

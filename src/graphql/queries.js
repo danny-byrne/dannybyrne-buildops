@@ -18,6 +18,7 @@ export const getEmployee = /* GraphQL */ `
     }
   }
 `;
+
 export const listEmployees = /* GraphQL */ `
   query ListEmployees(
     $filter: ModelEmployeeFilterInput
