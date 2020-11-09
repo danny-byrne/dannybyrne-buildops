@@ -79,9 +79,17 @@ export default function CreateEmployee(props) {
       <Button
         variant="outlined"
         color="primary"
-        onClick={() => addSkill(skill)}
+        onClick={() =>
+          props.addEmployee({
+            variables: {
+              firstName,
+              lastName,
+              skills,
+            },
+          })
+        }
       >
-        Add Skill
+        Add Employee
       </Button>
     </div>
   );
