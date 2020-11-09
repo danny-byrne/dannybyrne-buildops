@@ -5,7 +5,15 @@ import awsExports from "./aws-exports";
 
 import Skill from "./components/Skill";
 import Employees from "./components/Employees";
-import Employee from "./components/Employee";
+import CreateEmployee from "./components/CreateEmployee";
+
+import {
+  FormControl,
+  InputLabel,
+  Input,
+  FormHelperText,
+  Menu,
+} from "@material-ui/core";
 
 Amplify.configure(awsExports);
 
@@ -14,18 +22,16 @@ Amplify.configure(awsExports);
 
 function App() {
   const [employees, setEmployees] = useState([]);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [skill, setSkill] = useState("");
 
   return (
     <div className="App">
-      This is the Build-Ops takehome
-      <header></header>
-      <menu></menu>
+      <header>
+        <h1>This is the Build-Ops takehome</h1>
+      </header>
+      <Menu></Menu>
+
       <Employees />
-      <Employee />
-      <Skill />
+      <CreateEmployee />
     </div>
   );
 }
