@@ -13,14 +13,16 @@ export default function Skill(props) {
   const {
     skill: { id, employeeId, name },
   } = props;
-  console.log("in skill", props.skill);
+  // console.log("in skill", props.skill);
 
   const updateSkillHandler = () => {
+    console.log("updating skill", editedSkill);
     props.updateSkillHandler({ id, employeeId, name: editedSkill });
   };
 
   const deleteSkillHandler = () => {
-    props.deleteSkillHandler({ id, name, employeeId });
+    console.log("deleting skill", name);
+    props.deleteSkillHandler({ id });
   };
 
   const viewSkill = (

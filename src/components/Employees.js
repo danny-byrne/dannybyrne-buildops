@@ -4,7 +4,7 @@ import Employee from "./Employee";
 export default function Employees(props) {
   // console.log("rendering Employees", props.employees);
   const { employees } = props;
-  console.log("in Employees", employees);
+  // console.log("in Employees", employees);
   return (
     <div>
       <h1>Employees:</h1>

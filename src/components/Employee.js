@@ -12,12 +12,12 @@ import {
 let l = console.log;
 
 export default function Employee(props) {
-  l(props.firstName);
+  // l(props.firstName);
   const [skill, setSkill] = useState("");
 
-  l("in employee skills are", props.skills);
+  // l("in employee skills are", props.skills);
   const addSkillHandler = () => {
-    l("a skill was added", skill);
+    // l("a skill was added", skill);
     let curVariables = {
       employeeId: props.id,
       name: skill,
@@ -78,7 +78,7 @@ export default function Employee(props) {
       <ul>
         {props.skills !== null &&
           props.skills.map((skill) => {
-            l("creating skills views", skill);
+            // l("creating skills views", skill);
             return (
               <Skill
                 key={skill.id}
