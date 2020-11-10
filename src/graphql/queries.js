@@ -9,6 +9,7 @@ export const getEmployee = /* GraphQL */ `
       lastname
       skills {
         id
+        employeeId
         name
         createdAt
         updatedAt
@@ -18,7 +19,6 @@ export const getEmployee = /* GraphQL */ `
     }
   }
 `;
-
 export const listEmployees = /* GraphQL */ `
   query ListEmployees(
     $filter: ModelEmployeeFilterInput
@@ -32,6 +32,7 @@ export const listEmployees = /* GraphQL */ `
         lastname
         skills {
           id
+          employeeId
           name
           createdAt
           updatedAt
@@ -47,6 +48,7 @@ export const getSkill = /* GraphQL */ `
   query GetSkill($id: ID!) {
     getSkill(id: $id) {
       id
+      employeeId
       name
       createdAt
       updatedAt
@@ -62,6 +64,7 @@ export const listSkills = /* GraphQL */ `
     listSkills(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        employeeId
         name
         createdAt
         updatedAt

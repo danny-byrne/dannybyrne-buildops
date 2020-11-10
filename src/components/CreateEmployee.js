@@ -11,12 +11,20 @@ import {
 export default function CreateEmployee(props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [skill, setSkill] = useState("");
-  const [skills, setSkills] = useState([]);
 
-  const addSkill = (curSkill) => {
-    setSkills((prevSkills) => [curSkill, ...prevSkills]);
-    setSkill("");
+  const addEmployeeHandler = () => {
+    let curVariables = {
+      firstname: firstName,
+      lastname: lastName,
+    };
+
+    props.addEmployee({
+      variables: {
+        input: curVariables,
+      },
+    });
+    setFirstName("");
+    setLastName("");
   };
 
   return (
@@ -29,7 +37,6 @@ export default function CreateEmployee(props) {
         <FormControl>
           <InputLabel htmlFor="my-input"></InputLabel>
           <Input
-            id="my-input"
             aria-describedby="my-helper-text"
             onChange={(e) => setFirstName(e.target.value)}
             value={firstName}
@@ -41,7 +48,6 @@ export default function CreateEmployee(props) {
         <FormControl>
           <InputLabel htmlFor="my-input"></InputLabel>
           <Input
-            id="my-input"
             aria-describedby="my-helper-text"
             onChange={(e) => setLastName(e.target.value)}
             value={lastName}
@@ -50,44 +56,11 @@ export default function CreateEmployee(props) {
             Enter New Employee Last Name
           </FormHelperText>
         </FormControl>
-        <FormControl>
-          <InputLabel htmlFor="my-input"></InputLabel>
-          <Input
-            id="my-input"
-            aria-describedby="my-helper-text"
-            onChange={(e) => setSkill(e.target.value)}
-            value={skill}
-          />
-          <FormHelperText id="my-helper-text">
-            Enter New Employee Skill
-          </FormHelperText>
-        </FormControl>
-        <br />
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={() => addSkill(skill)}
-        >
-          Add Skill
-        </Button>
-        <ul>
-          {skills.map((e) => {
-            return <li key={e}>{e}</li>;
-          })}
-        </ul>
       </Box>
       <Button
         variant="outlined"
         color="primary"
-        onClick={() =>
-          props.addEmployee({
-            variables: {
-              firstName,
-              lastName,
-              skills,
-            },
-          })
-        }
+        onClick={() => addEmployeeHandler()}
       >
         Add Employee
       </Button>

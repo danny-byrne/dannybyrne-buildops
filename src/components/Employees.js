@@ -1,33 +1,22 @@
-import React, { useEffect } from "react";
-import { useQuery, useMutation, gql } from "@apollo/client";
-import { listEmployees } from "../graphql/queries";
-
-const LIST_EMPLOYEES = gql(listEmployees);
+import React from "react";
+import Employee from "./Employee";
 
 export default function Employees(props) {
-  const { loading, error, data } = useQuery(LIST_EMPLOYEES);
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
-  // return data.employees.map(({ id, firstname, lastname, skills }) => (
-  //   <div key={id}>
-  //     <p>
-  //       {firstname} {lastname} {skills}
-  //     </p>
-  //   </div>
-  // ));
-  console.log(data);
+  // console.log("rendering Employees", props.employees);
+  const { employees } = props;
+  console.log("in Employees", employees);
   return (
     <div>
       <h1>Employees:</h1>
-      {/* {data.listemployees.items.map(({ id, firstname, lastname, skills }) => (
-        <div key={id}>
-          <p>
-            {firstname} {lastname} {skills}
-          </p>
-        </div>
-      ))} */}
+      {employees.map((e) => (
+        <Employee
+          id={e.id}
+          firstName={e.firstname}
+          lastName={e.lastname}
+          skills={e.skills}
+          skillHandlers={props.skillHandlers}
+        />
+      ))}
     </div>
   );
-
-  // return <div>Some Data Came Back!</div>;
 }

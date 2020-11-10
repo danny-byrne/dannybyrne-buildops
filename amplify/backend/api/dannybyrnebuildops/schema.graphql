@@ -6,5 +6,6 @@ type Employee @model {
 }
 type Skill @model {
   id: String
+  employeeId: String
   name: String
 }

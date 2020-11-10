@@ -9,6 +9,7 @@ export const onCreateEmployee = /* GraphQL */ `
       lastname
       skills {
         id
+        employeeId
         name
         createdAt
         updatedAt
@@ -26,6 +27,7 @@ export const onUpdateEmployee = /* GraphQL */ `
       lastname
       skills {
         id
+        employeeId
         name
         createdAt
         updatedAt
@@ -43,6 +45,7 @@ export const onDeleteEmployee = /* GraphQL */ `
       lastname
       skills {
         id
+        employeeId
         name
         createdAt
         updatedAt
@@ -56,6 +59,7 @@ export const onCreateSkill = /* GraphQL */ `
   subscription OnCreateSkill {
     onCreateSkill {
       id
+      employeeId
       name
       createdAt
       updatedAt
@@ -66,6 +70,7 @@ export const onUpdateSkill = /* GraphQL */ `
   subscription OnUpdateSkill {
     onUpdateSkill {
       id
+      employeeId
       name
       createdAt
       updatedAt
@@ -76,6 +81,7 @@ export const onDeleteSkill = /* GraphQL */ `
   subscription OnDeleteSkill {
     onDeleteSkill {
       id
+      employeeId
       name
       createdAt
       updatedAt
