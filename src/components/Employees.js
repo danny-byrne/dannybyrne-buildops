@@ -15,6 +15,7 @@ export default function Employees(props) {
           lastName={e.lastname}
           skills={e.skills}
           skillHandlers={props.skillHandlers}
+          employeeHandlers={props.employeeHandlers}
         />
       ))}
     </div>

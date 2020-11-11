@@ -33,10 +33,6 @@ const UPDATE_SKILL = gql(updateSkill);
 const LIST_SKILLS = gql(listSkills);
 
 function App() {
-  const [updated, setUpdated] = useState(false);
-  const [employees, setEmployees] = useState([]);
-  const [skills, setSkills] = useState([]);
-
   const {
     loading: employeesLoading,
     error: employeesError,
@@ -48,9 +44,6 @@ function App() {
     data: skillsData,
   } = useQuery(LIST_SKILLS);
 
-  // console.log(employeesData);
-  // console.log(skillsData);
-
   const combinedData =
     employeesData &&
     skillsData &&
@@ -59,9 +52,15 @@ function App() {
       skillsData.listSkills.items
     );
 
-  // console.log(combinedData);
-
   const [addEmployee] = useMutation(CREATE_EMPLOYEE, {
+    refetchQueries: (mutationResult) => [{ query: LIST_EMPLOYEES }],
+  });
+
+  const [updateEmployee] = useMutation(UPDATE_EMPLOYEE, {
+    refetchQueries: (mutationResult) => [{ query: LIST_EMPLOYEES }],
+  });
+
+  const [deleteEmployee] = useMutation(DELETE_EMPLOYEE, {
     refetchQueries: (mutationResult) => [{ query: LIST_EMPLOYEES }],
   });
 
@@ -78,15 +77,10 @@ function App() {
   });
 
   const skillHandlers = { addSkill, updateSkill, deleteSkill };
-  const employeeHandlers = { addEmployee };
+  const employeeHandlers = { addEmployee, updateEmployee, deleteEmployee };
 
   if (employeesLoading || skillsLoading) return <p>Loading...</p>;
   if (employeesError || skillsError) return <p>Error </p>;
-
-  if (employeesData.listEmployees.items.length > 0 && !updated) {
-    setEmployees(employeesData.listEmployees.items);
-    setUpdated(true);
-  }
 
   return (
     <div className="App">
@@ -97,7 +91,11 @@ function App() {
 
       <CreateEmployee addEmployee={addEmployee} />
       {employeesData && skillsData && (
-        <Employees employees={combinedData} skillHandlers={skillHandlers} />
+        <Employees
+          employees={combinedData}
+          skillHandlers={skillHandlers}
+          employeeHandlers={employeeHandlers}
+        />
       )}
     </div>
   );

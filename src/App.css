@@ -28,3 +28,33 @@
   flex-direction: column;
   align-content: center;
 }
+
+.EmployeeContainer {
+  border: 1px solid black;
+  height: auto;
+}
+
+.EmployeeBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  float: left;
+  background-color: antiquewhite;
+}
+
+.Avatar {
+  background-color: #61dafb;
+  height: 66%;
+  width: 100%;
+}
+
+.SkillButton {
+  float: right;
+  height: 50%;
+}
+
+.SkillBox {
+  display: flex;
+  flex-direction: row;
+}
