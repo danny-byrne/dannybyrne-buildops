@@ -13,7 +13,6 @@ export default function Skill(props) {
   const {
     skill: { id, employeeId, name },
   } = props;
-  // console.log("in skill", props.skill);
 
   const updateSkillHandler = () => {
     props.updateSkillHandler({ id, employeeId, name: editedSkill });
@@ -26,29 +25,30 @@ export default function Skill(props) {
 
   const viewSkill = (
     <ButtonGroup>
-      <h4 key={id}>{name}</h4>
-      <Button className="SkillButton" onClick={() => setView(view.edit)}>
+      <h4 className="SkillName" key={id}>
+        {name}
+      </h4>
+      <Button className="LeftButton" onClick={() => setView(view.edit)}>
         Edit
       </Button>
-      <Button className="SkillButton" onClick={() => deleteSkillHandler()}>
+      <Button className="RightButton" onClick={() => deleteSkillHandler()}>
         Delete
       </Button>
     </ButtonGroup>
   );
 
-  //add onclick to save to perform update mutation
-  //add onclick to cancel
   const editSkill = (
     <ButtonGroup>
       <TextField
+        className="SkillName"
         aria-describedby="edit-skill"
         onChange={(e) => seteditedSkill(e.target.value)}
         value={editedSkill}
       />
-      <Button className="SkillButton" onClick={() => updateSkillHandler()}>
+      <Button className="LeftButton" onClick={() => updateSkillHandler()}>
         Save
       </Button>
-      <Button className="SkillButton" onClick={() => setView(view.view)}>
+      <Button className="RightButton" onClick={() => setView(view.view)}>
         Cancel
       </Button>
     </ButtonGroup>

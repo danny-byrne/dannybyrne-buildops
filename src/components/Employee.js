@@ -130,10 +130,10 @@ export default function Employee(props) {
         >
           Add Skill
         </Button>
-        <h3>
-          {props.firstName} {props.lastName}'s Skills:
-        </h3>
-        <ul>
+        <div className="SkillsContainer">
+          <h3>
+            {props.firstName} {props.lastName}'s Skills:
+          </h3>
           {props.skills !== null &&
             props.skills.map((skill) => {
               return (
@@ -145,7 +145,7 @@ export default function Employee(props) {
                 />
               );
             })}
-        </ul>
+        </div>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ export default function Employees(props) {
   // console.log("in Employees", employees);
   return (
     <div>
-      <h1>Employees:</h1>
+      <h2 className="EmployeesLabel">Employees:</h2>
       {employees.map((e) => (
         <Employee
           id={e.id}
