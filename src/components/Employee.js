@@ -94,7 +94,7 @@ export default function Employee(props) {
       {avatar}
       <div id="EmployeeViewEdit">
         <ButtonGroup>
-          <h3>
+          <h3 id="Employeename">
             {props.firstName} {props.lastName}
           </h3>
           <Button className="LeftButton" onClick={() => setView(views.edit)}>

@@ -23,19 +23,18 @@ export default function Skill(props) {
   };
 
   const viewSkill = (
-    <ButtonGroup>
+    <>
       <h4 className="SkillName" key={id}>
         {name}
       </h4>
       <div className="SkillFill" />
-
       <Button className="LeftButton" onClick={() => setView(view.edit)}>
         Edit
       </Button>
       <Button className="RightButton" onClick={() => deleteSkillHandler()}>
         Delete
       </Button>
-    </ButtonGroup>
+    </>
   );
 
   const editSkill = (

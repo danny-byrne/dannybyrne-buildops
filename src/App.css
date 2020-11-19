@@ -3,18 +3,25 @@
 }
 
 header {
-  text-align: center;
-  /* position: fixed; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 menu {
   position: relative;
-  top: -55px;
+  top: 10px;
+}
+
+#Title {
+  position: relative;
+  left: 25px;
 }
 
 #Logo {
   position: relative;
-  float: right;
+  /* float: right; */
+  top: -12px;
 }
 
 .App-link {
@@ -50,6 +57,11 @@ menu {
   float: left;
   padding-left: 2%;
   padding-top: 1%;
+}
+
+#Employeename {
+  position: relative;
+  width: 10%;
 }
 
 #EmployeeViewEdit {
@@ -91,19 +103,19 @@ menu {
 }
 
 .LeftButton {
-  position: relative;
-  float: right;
+  /* position: relative;
+  float: right; */
   height: 50px;
   width: 100px;
 }
 
 .RightButton {
-  position: relative;
-  float: right;
+  /* position: relative;
+  float: right; */
   height: 50px;
   width: 100px;
 }
 
 .SkillFill {
-  width: 200px;
+  width: 10%;
 }

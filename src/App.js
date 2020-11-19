@@ -92,14 +92,14 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Employees List</h1>
+        <menu>
+          <AppMenu setView={setView} views={views} />
+        </menu>
+        <h1 id="Title">Employees List</h1>
+        <div id="Logo">
+          <Logo />
+        </div>
       </header>
-      <menu>
-        <AppMenu setView={setView} views={views} />
-      </menu>
-      <div id="Logo">
-        <Logo />
-      </div>
       <CreateEmployee addEmployee={addEmployee} />
       {employeesData && skillsData && (
         <Employees
