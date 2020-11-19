@@ -28,31 +28,39 @@ export default function Skill(props) {
         {name}
       </h4>
       <div className="SkillFill" />
-      <Button className="LeftButton" onClick={() => setView(view.edit)}>
-        Edit
-      </Button>
-      <Button className="RightButton" onClick={() => deleteSkillHandler()}>
-        Delete
-      </Button>
+      <div className="SkillButtonContainer">
+        <ButtonGroup>
+          <Button className="LeftButton" onClick={() => setView(views.edit)}>
+            Edit
+          </Button>
+          <Button className="RightButton" onClick={() => deleteSkillHandler()}>
+            Delete
+          </Button>
+        </ButtonGroup>
+      </div>
     </>
   );
 
   const editSkill = (
-    <ButtonGroup>
+    <>
       <TextField
         className="SkillName"
         aria-describedby="edit-skill"
         onChange={(e) => seteditedSkill(e.target.value)}
         value={editedSkill}
       />
-      <div className="SkillFill" />
-      <Button className="LeftButton" onClick={() => updateSkillHandler()}>
-        Save
-      </Button>
-      <Button className="RightButton" onClick={() => setView(view.view)}>
-        Cancel
-      </Button>
-    </ButtonGroup>
+
+      <ButtonGroup>
+        <div className="SkillButtonContainer">
+          <Button className="LeftButton" onClick={() => updateSkillHandler()}>
+            Save
+          </Button>
+          <Button className="RightButton" onClick={() => setView(views.view)}>
+            Cancel
+          </Button>
+        </div>
+      </ButtonGroup>
+    </>
   );
 
   const skillView = view === views.view ? viewSkill : editSkill;

@@ -92,11 +92,11 @@ export default function Employee(props) {
   const viewEmployee = (
     <>
       {avatar}
-      <div id="EmployeeViewEdit">
+      <div className="EmployeeViewEditSave">
+        <h3 className="Employeename">
+          {props.firstName} {props.lastName}
+        </h3>
         <ButtonGroup>
-          <h3 id="Employeename">
-            {props.firstName} {props.lastName}
-          </h3>
           <Button className="LeftButton" onClick={() => setView(views.edit)}>
             Edit
           </Button>
@@ -114,7 +114,7 @@ export default function Employee(props) {
   const editEmployee = (
     <>
       {avatar}
-      <div id="EmployeeViewEdit">
+      <div id="EmployeeViewEditSave">
         <ButtonGroup>
           <TextField
             aria-describedby="enter-first-name"
@@ -140,35 +140,39 @@ export default function Employee(props) {
     </>
   );
 
+  const addSkillsBox = (
+    <div className="AddSkillsBox">
+      <Box>
+        <FormControl>
+          <InputLabel htmlFor="my-input"></InputLabel>
+          <Input
+            aria-describedby="skill-input"
+            onChange={(e) => setSkill(e.target.value)}
+            value={skill}
+          />
+          <FormHelperText id="employee-name-input">
+            Enter New Employee Skill
+          </FormHelperText>
+        </FormControl>
+        <br />
+        <Button
+          float="right"
+          variant="outlined"
+          color="primary"
+          onClick={() => addSkillHandler()}
+        >
+          Add Skill
+        </Button>
+      </Box>
+    </div>
+  );
+
   const employeeView = view === views.view ? viewEmployee : editEmployee;
 
   return (
     <div className="EmployeeContainer" key={props.id}>
       <div className="EmployeeBox">{employeeView}</div>
-      <div className="AddSkillsBox">
-        <Box>
-          <FormControl>
-            <InputLabel htmlFor="my-input"></InputLabel>
-            <Input
-              aria-describedby="skill-input"
-              onChange={(e) => setSkill(e.target.value)}
-              value={skill}
-            />
-            <FormHelperText id="employee-name-input">
-              Enter New Employee Skill
-            </FormHelperText>
-          </FormControl>
-          <br />
-          <Button
-            float="right"
-            variant="outlined"
-            color="primary"
-            onClick={() => addSkillHandler()}
-          >
-            Add Skill
-          </Button>
-        </Box>
-      </div>
+      {addSkillsBox}
       <div className="SkillsContainer">
         <Container>
           <h3>
