@@ -4,11 +4,17 @@
 
 header {
   text-align: center;
+  /* position: fixed; */
 }
 
 menu {
   position: relative;
   top: -55px;
+}
+
+#Logo {
+  position: relative;
+  float: right;
 }
 
 .App-link {
@@ -20,6 +26,11 @@ menu {
   display: flex;
   flex-direction: column;
   align-content: center;
+}
+
+.EmployeesLabel {
+  position: relative;
+  left: 20px;
 }
 
 .EmployeeContainer {
@@ -39,57 +50,60 @@ menu {
   float: left;
   padding-left: 2%;
   padding-top: 1%;
+}
 
-  /* background-color: antiquewhite; */
+#EmployeeViewEdit {
+  padding-top: 1%;
 }
 
 .Button {
   height: 30px;
 }
 
-.SkillButton {
-  float: right;
-  height: 50%;
-}
-
-.SkillsContainer {
-  overflow: scroll;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  border: 2px solid rgb(73, 43, 141);
-}
-
 .AddSkillsBox {
+  position: relative;
+  top: 33%;
   text-align: center;
   width: 300px;
   height: 100px;
   float: right;
 }
 
+.SkillsContainer {
+  overflow: scroll;
+  width: 50%;
+  border: 2px solid rgb(73, 43, 141);
+}
+
 .Skill {
-  display: block;
   height: 50px;
   border: 1px solid rgb(73, 43, 141);
   border-radius: 5px;
 }
 
 .SkillName {
+  position: relative;
   float: left;
   width: 150px;
   height: 50px;
+  top: -4px;
+  left: 18px;
 }
 
 .LeftButton {
-  /* float: right; */
+  position: relative;
+  float: right;
   height: 50px;
-  grid-column-start: 2;
-  grid-column-end: 3;
+  width: 100px;
 }
 
 .RightButton {
-  /* float: right; */
+  position: relative;
+  float: right;
   height: 50px;
-  grid-column-start: 3;
-  grid-column-end: 4;
+  width: 100px;
+}
+
+.SkillFill {
+  width: 200px;
 }

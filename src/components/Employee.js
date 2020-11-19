@@ -92,42 +92,51 @@ export default function Employee(props) {
   const viewEmployee = (
     <>
       {avatar}
-
-      <ButtonGroup>
-        <h3>
-          {props.firstName} {props.lastName}
-        </h3>
-        <Button className="LeftButton" onClick={() => setView(views.edit)}>
-          Edit
-        </Button>
-        <Button className="RightButton" onClick={() => deleteEmployeeHandler()}>
-          Delete
-        </Button>
-      </ButtonGroup>
+      <div id="EmployeeViewEdit">
+        <ButtonGroup>
+          <h3>
+            {props.firstName} {props.lastName}
+          </h3>
+          <Button className="LeftButton" onClick={() => setView(views.edit)}>
+            Edit
+          </Button>
+          <Button
+            className="RightButton"
+            onClick={() => deleteEmployeeHandler()}
+          >
+            Delete
+          </Button>
+        </ButtonGroup>
+      </div>
     </>
   );
 
   const editEmployee = (
     <>
       {avatar}
-      <ButtonGroup>
-        <TextField
-          aria-describedby="wnter-first-name"
-          onChange={(e) => setEditedFirstName(e.target.value)}
-          value={editedFirstName}
-        />
-        <TextField
-          aria-describedby="enter-last-name"
-          onChange={(e) => setEditedLastName(e.target.value)}
-          value={editedLastName}
-        />
-        <Button className="LeftButton" onClick={() => updateEmployeeHandler()}>
-          Save
-        </Button>
-        <Button className="RightButton" onClick={() => setView(views.view)}>
-          Cancel
-        </Button>
-      </ButtonGroup>
+      <div id="EmployeeViewEdit">
+        <ButtonGroup>
+          <TextField
+            aria-describedby="enter-first-name"
+            onChange={(e) => setEditedFirstName(e.target.value)}
+            value={editedFirstName}
+          />
+          <TextField
+            aria-describedby="enter-last-name"
+            onChange={(e) => setEditedLastName(e.target.value)}
+            value={editedLastName}
+          />
+          <Button
+            className="LeftButton"
+            onClick={() => updateEmployeeHandler()}
+          >
+            Save
+          </Button>
+          <Button className="RightButton" onClick={() => setView(views.view)}>
+            Cancel
+          </Button>
+        </ButtonGroup>
+      </div>
     </>
   );
 

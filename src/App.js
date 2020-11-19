@@ -8,6 +8,8 @@ import Employees from "./components/Employees";
 import CreateEmployee from "./components/CreateEmployee";
 import AppMenu from "./components/AppMenu";
 
+import { ReactComponent as Logo } from "./icons/logo-14.svg";
+
 import {
   createEmployee,
   updateEmployee,
@@ -95,6 +97,9 @@ function App() {
       <menu>
         <AppMenu setView={setView} views={views} />
       </menu>
+      <div id="Logo">
+        <Logo />
+      </div>
       <CreateEmployee addEmployee={addEmployee} />
       {employeesData && skillsData && (
         <Employees

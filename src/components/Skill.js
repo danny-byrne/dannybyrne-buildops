@@ -27,6 +27,8 @@ export default function Skill(props) {
       <h4 className="SkillName" key={id}>
         {name}
       </h4>
+      <div className="SkillFill" />
+
       <Button className="LeftButton" onClick={() => setView(view.edit)}>
         Edit
       </Button>
@@ -44,6 +46,7 @@ export default function Skill(props) {
         onChange={(e) => seteditedSkill(e.target.value)}
         value={editedSkill}
       />
+      <div className="SkillFill" />
       <Button className="LeftButton" onClick={() => updateSkillHandler()}>
         Save
       </Button>
