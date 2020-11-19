@@ -6,6 +6,7 @@ import {
   FormHelperText,
   Box,
   Button,
+  Container,
 } from "@material-ui/core";
 
 export default function CreateEmployee(props) {
@@ -29,41 +30,42 @@ export default function CreateEmployee(props) {
 
   return (
     <div id="CreateEmployeeContainer">
-      Create New Employee
-      <Box
-        width={1 / 4}
-        // display="flex" flexDirection="column"
-      >
-        <FormControl>
-          <InputLabel htmlFor="my-input"></InputLabel>
-          <Input
-            aria-describedby="my-helper-text"
-            onChange={(e) => setFirstName(e.target.value)}
-            value={firstName}
-          />
-          <FormHelperText id="my-helper-text">
-            Enter New Employee First Name
-          </FormHelperText>
-        </FormControl>
-        <FormControl>
-          <InputLabel htmlFor="my-input"></InputLabel>
-          <Input
-            aria-describedby="my-helper-text"
-            onChange={(e) => setLastName(e.target.value)}
-            value={lastName}
-          />
-          <FormHelperText id="my-helper-text">
-            Enter New Employee Last Name
-          </FormHelperText>
-        </FormControl>
-      </Box>
-      <Button
-        variant="outlined"
-        color="primary"
-        onClick={() => addEmployeeHandler()}
-      >
-        Add Employee
-      </Button>
+      <Container>
+        Create New Employee
+        <Container>
+          <FormControl>
+            <InputLabel htmlFor="my-input"></InputLabel>
+            <Input
+              aria-describedby="my-helper-text"
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
+            />
+            <FormHelperText id="my-helper-text">
+              Enter New Employee First Name
+            </FormHelperText>
+          </FormControl>
+        </Container>
+        <Container>
+          <FormControl>
+            <InputLabel htmlFor="my-input"></InputLabel>
+            <Input
+              aria-describedby="my-helper-text"
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastName}
+            />
+            <FormHelperText id="my-helper-text">
+              Enter New Employee Last Name
+            </FormHelperText>
+          </FormControl>
+        </Container>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={() => addEmployeeHandler()}
+        >
+          Add Employee
+        </Button>
+      </Container>
     </div>
   );
 }

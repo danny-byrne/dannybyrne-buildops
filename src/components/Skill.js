@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Box, Button, ButtonGroup, TextField } from "@material-ui/core";
+import { Box, Button, ButtonGroup, TextField, Grid } from "@material-ui/core";
 
 const views = {
   view: "view",
   edit: "edit",
-  edited: "edited",
 };
 
 export default function Skill(props) {
@@ -56,9 +55,5 @@ export default function Skill(props) {
 
   const skillView = view === views.view ? viewSkill : editSkill;
 
-  return (
-    <Box className="SkillBox" color="blue" border="1px solid">
-      {skillView}
-    </Box>
-  );
+  return <div className="Skill">{skillView}</div>;
 }

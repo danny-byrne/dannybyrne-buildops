@@ -1,21 +1,14 @@
 .App {
+  /* text-align: center; */
+}
+
+header {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+menu {
+  position: relative;
+  top: -55px;
 }
 
 .App-link {
@@ -23,32 +16,36 @@
 }
 
 #CreateEmployeeContainer {
-  /* background-color: green; */
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-content: center;
 }
 
 .EmployeeContainer {
+  display: flex;
+  flex-direction: row;
   border: 1px solid black;
   height: 300px;
+  overflow: hidden;
 }
 
 .EmployeeBox {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 30%;
   height: 100%;
   float: left;
-  background-color: antiquewhite;
+  padding-left: 2%;
+  padding-top: 1%;
+
+  /* background-color: antiquewhite; */
 }
 
-/* .Avatar {
-  background-color: #61dafb;
-  height: 60px;
-  width: 60px;
-} */
+.Button {
+  height: 30px;
+}
 
 .SkillButton {
   float: right;
@@ -56,33 +53,43 @@
 }
 
 .SkillsContainer {
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   width: 50%;
+  border: 2px solid rgb(73, 43, 141);
 }
 
-.SkillBox {
-  display: inline-grid;
-  grid-template-columns: 80px 80px 80px auto;
-  /* display: flex;
-  flex-direction: row; */
-  /* justify-content: space-evenly; */
-  /* align-items: center; */
+.AddSkillsBox {
+  text-align: center;
+  width: 300px;
+  height: 100px;
+  float: right;
+}
+
+.Skill {
+  display: block;
+  height: 50px;
+  border: 1px solid rgb(73, 43, 141);
+  border-radius: 5px;
 }
 
 .SkillName {
-  grid-column-start: 1;
-  grid-column-end: 2;
+  float: left;
+  width: 150px;
+  height: 50px;
 }
 
 .LeftButton {
+  /* float: right; */
+  height: 50px;
   grid-column-start: 2;
   grid-column-end: 3;
 }
 
 .RightButton {
-  grid-column-start: 4;
-}
-
-.EmployeesLabel {
+  /* float: right; */
+  height: 50px;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }

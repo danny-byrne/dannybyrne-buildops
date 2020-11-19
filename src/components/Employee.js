@@ -10,23 +10,14 @@ import {
   TextField,
   Avatar,
   Box,
+  Container,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
+const avatarDimensions = "225px";
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-  small: {
-    width: theme.spacing(3),
-    height: theme.spacing(3),
-  },
   large: {
-    width: "100%",
-    // height: "100%",
+    width: avatarDimensions,
+    height: avatarDimensions,
   },
 }));
 
@@ -97,38 +88,45 @@ export default function Employee(props) {
       },
     });
   };
-
+  const avatar = <Avatar className={classes.large} src="/broken-image.jpg" />;
   const viewEmployee = (
     <>
-      <Avatar className={classes.large} src="/broken-image.jpg" />
-      {/* {props.firstName.substring(0, 1)} */}
+      {avatar}
 
       <ButtonGroup>
         <h3>
           {props.firstName} {props.lastName}
         </h3>
-        <Button onClick={() => setView(views.edit)}>Edit</Button>
-        <Button onClick={() => deleteEmployeeHandler()}>Delete</Button>
+        <Button className="LeftButton" onClick={() => setView(views.edit)}>
+          Edit
+        </Button>
+        <Button className="RightButton" onClick={() => deleteEmployeeHandler()}>
+          Delete
+        </Button>
       </ButtonGroup>
     </>
   );
 
   const editEmployee = (
     <>
-      <Avatar className={classes.large} src="/broken-image.jpg" />
+      {avatar}
       <ButtonGroup>
         <TextField
-          aria-describedby="my-helper-text"
+          aria-describedby="wnter-first-name"
           onChange={(e) => setEditedFirstName(e.target.value)}
           value={editedFirstName}
         />
         <TextField
-          aria-describedby="my-helper-text"
+          aria-describedby="enter-last-name"
           onChange={(e) => setEditedLastName(e.target.value)}
           value={editedLastName}
         />
-        <Button onClick={() => updateEmployeeHandler()}>Save</Button>
-        <Button onClick={() => setView(views.view)}>Cancel</Button>
+        <Button className="LeftButton" onClick={() => updateEmployeeHandler()}>
+          Save
+        </Button>
+        <Button className="RightButton" onClick={() => setView(views.view)}>
+          Cancel
+        </Button>
       </ButtonGroup>
     </>
   );
@@ -138,27 +136,32 @@ export default function Employee(props) {
   return (
     <div className="EmployeeContainer" key={props.id}>
       <div className="EmployeeBox">{employeeView}</div>
-      <div className="SkillsBox">
-        <FormControl>
-          <InputLabel htmlFor="my-input"></InputLabel>
-          <Input
-            aria-describedby="my-helper-text"
-            onChange={(e) => setSkill(e.target.value)}
-            value={skill}
-          />
-          <FormHelperText id="my-helper-text">
-            Enter New Employee Skill
-          </FormHelperText>
-        </FormControl>
-        <br />
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={() => addSkillHandler()}
-        >
-          Add Skill
-        </Button>
-        <div className="SkillsContainer">
+      <div className="AddSkillsBox">
+        <Box>
+          <FormControl>
+            <InputLabel htmlFor="my-input"></InputLabel>
+            <Input
+              aria-describedby="skill-input"
+              onChange={(e) => setSkill(e.target.value)}
+              value={skill}
+            />
+            <FormHelperText id="employee-name-input">
+              Enter New Employee Skill
+            </FormHelperText>
+          </FormControl>
+          <br />
+          <Button
+            float="right"
+            variant="outlined"
+            color="primary"
+            onClick={() => addSkillHandler()}
+          >
+            Add Skill
+          </Button>
+        </Box>
+      </div>
+      <div className="SkillsContainer">
+        <Container>
           <h3>
             {props.firstName} {props.lastName}'s Skills:
           </h3>
@@ -173,7 +176,7 @@ export default function Employee(props) {
                 />
               );
             })}
-        </div>
+        </Container>
       </div>
     </div>
   );

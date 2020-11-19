@@ -1,12 +1,12 @@
 import "./App.css";
 import React, { useState } from "react";
 import Amplify from "aws-amplify";
-// import { API, graphqlOperation } from "aws-amplify";
 import awsExports from "./aws-exports";
 import { useQuery, useMutation, gql } from "@apollo/client";
 
 import Employees from "./components/Employees";
 import CreateEmployee from "./components/CreateEmployee";
+import AppMenu from "./components/AppMenu";
 
 import {
   createEmployee,
@@ -18,7 +18,6 @@ import {
 } from "./graphql/mutations";
 import { listEmployees, listSkills } from "./graphql/queries";
 
-import { Menu } from "@material-ui/core";
 import { assignSkills } from "./helpers/helpers";
 
 Amplify.configure(awsExports);
@@ -33,6 +32,12 @@ const UPDATE_SKILL = gql(updateSkill);
 const LIST_SKILLS = gql(listSkills);
 
 function App() {
+  const views = {
+    home: "home",
+    employees: "employees",
+    about: "about",
+  };
+  const [view, setView] = useState(views.home);
   const {
     loading: employeesLoading,
     error: employeesError,
@@ -87,8 +92,9 @@ function App() {
       <header>
         <h1>Employees List</h1>
       </header>
-      <Menu></Menu>
-
+      <menu>
+        <AppMenu setView={setView} views={views} />
+      </menu>
       <CreateEmployee addEmployee={addEmployee} />
       {employeesData && skillsData && (
         <Employees
