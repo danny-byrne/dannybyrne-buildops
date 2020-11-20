@@ -1,6 +1,8 @@
 1.) Open and cd into the project folder in your IDE.
 2.) Run npm install to install dependencies
 3.) run npm start, and you should be all set.
+4.) to deploy run 'amplify publish'
+5.) tests will be added in the coming days.
 
 the challenge is posted at:
 http://buildops-dev.s3-website-us-west-2.amazonaws.com
