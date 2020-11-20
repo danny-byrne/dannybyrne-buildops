@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Button, ButtonGroup, TextField, Grid } from "@material-ui/core";
+import { Button, ButtonGroup, TextField } from "@material-ui/core";
 
 const views = {
   view: "view",
@@ -27,7 +27,6 @@ export default function Skill(props) {
       <h4 className="SkillName" key={id}>
         {name}
       </h4>
-      {/* <div className="SkillFill" /> */}
       <div className="SkillButtonContainer">
         <ButtonGroup>
           <Button className="LeftButton" onClick={() => setView(views.edit)}>

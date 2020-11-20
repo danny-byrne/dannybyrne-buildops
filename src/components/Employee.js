@@ -24,10 +24,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//views for determining whether to view or edit the employee
 const views = {
   view: "view",
   edit: "edit",
 };
+
+/**
+ * This component has the job of keeping track of any skills we're adding,
+ * of displaying skills we've already entered, and editing or deleting those skills.
+ * It determines what to display based on a set of views that we change depending on
+ * whether in 'edit' or 'view' mode.
+ */
 
 export default function Employee(props) {
   const classes = useStyles();
@@ -89,6 +97,7 @@ export default function Employee(props) {
       },
     });
   };
+  //avatar icon that would eventually receive the URL of an image and display it
   const avatar = <Avatar className={classes.avatar} src="/broken-image.jpg" />;
   const viewEmployee = (
     <>

@@ -20,6 +20,7 @@ import {
 } from "./graphql/mutations";
 import { listEmployees, listSkills } from "./graphql/queries";
 
+//helper function for de-facto table join between employees and skills.
 import { assignSkills } from "./helpers/helpers";
 
 Amplify.configure(awsExports);
@@ -32,6 +33,13 @@ const CREATE_SKILL = gql(createSkill);
 const DELETE_SKILL = gql(deleteSkill);
 const UPDATE_SKILL = gql(updateSkill);
 const LIST_SKILLS = gql(listSkills);
+
+/**
+ * This component houses all the logic for side effects.  It performs two queries on the employees and skills tables and
+ * performs a de-facto table join, in order to match each skill up with the respective employee, and pass the necessary data to view those skills with each employee,
+ * and to be able to mutate the data based on employee or skill ID.  I take an approach of rendering certain content base on views that I specify within a useState call.
+ * Here I have not actually implemented different views for the menu, more of just a placeholder.  You will see a similar pattern throughout the rest of the component tree.
+ */
 
 function App() {
   const views = {
@@ -61,6 +69,7 @@ function App() {
       skillsData.listSkills.items
     );
 
+  //each Apollo Hooks call refetchesQueries in order to view most up to date data
   const [addEmployee] = useMutation(CREATE_EMPLOYEE, {
     refetchQueries: (mutationResult) => [{ query: LIST_EMPLOYEES }],
   });
