@@ -11,7 +11,7 @@ Will add testing utils in the coming days, as I figure out how to run Apollo Tes
 
 Implement Mobile Views.
 
-Dve deeper into ad-hoc database joins in GraphQL.
+Dive deeper into ad-hoc database joins in GraphQL.
 Instead of joining the tables on the front end, leverage the power of GQL to join from the DynamoDb query.
 
 The font page Navigation is purely cosmetic at this point.
