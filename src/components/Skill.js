@@ -27,7 +27,7 @@ export default function Skill(props) {
       <h4 className="SkillName" key={id}>
         {name}
       </h4>
-      <div className="SkillFill" />
+      {/* <div className="SkillFill" /> */}
       <div className="SkillButtonContainer">
         <ButtonGroup>
           <Button className="LeftButton" onClick={() => setView(views.edit)}>
@@ -44,7 +44,7 @@ export default function Skill(props) {
   const editSkill = (
     <>
       <TextField
-        className="SkillName"
+        className="SkillNameEdit"
         aria-describedby="edit-skill"
         onChange={(e) => seteditedSkill(e.target.value)}
         value={editedSkill}

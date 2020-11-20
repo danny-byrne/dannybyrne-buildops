@@ -13,15 +13,16 @@ import {
   Container,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-const avatarDimensions = "225px";
+
+//size for styling Avatar component
 const useStyles = makeStyles((theme) => ({
-  large: {
-    width: avatarDimensions,
-    height: avatarDimensions,
+  avatar: {
+    width: 150,
+    height: 150,
+    left: 7,
+    top: 7,
   },
 }));
-
-let l = console.log;
 
 const views = {
   view: "view",
@@ -34,7 +35,7 @@ export default function Employee(props) {
   const [skill, setSkill] = useState("");
   const [editedFirstName, setEditedFirstName] = useState(props.firstName);
   const [editedLastName, setEditedLastName] = useState(props.lastName);
-
+  //handlers for mutation operations passed in props
   const addSkillHandler = () => {
     let curVariables = {
       employeeId: props.id,
@@ -88,12 +89,12 @@ export default function Employee(props) {
       },
     });
   };
-  const avatar = <Avatar className={classes.large} src="/broken-image.jpg" />;
+  const avatar = <Avatar className={classes.avatar} src="/broken-image.jpg" />;
   const viewEmployee = (
     <>
       {avatar}
       <div className="EmployeeViewEditSave">
-        <h3 className="Employeename">
+        <h3 className="EmployeeName">
           {props.firstName} {props.lastName}
         </h3>
         <ButtonGroup>
@@ -166,7 +167,7 @@ export default function Employee(props) {
       </Box>
     </div>
   );
-
+  //determine whether to render view or edit
   const employeeView = view === views.view ? viewEmployee : editEmployee;
 
   return (

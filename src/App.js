@@ -39,7 +39,9 @@ function App() {
     employees: "employees",
     about: "about",
   };
+
   const [view, setView] = useState(views.home);
+
   const {
     loading: employeesLoading,
     error: employeesError,
