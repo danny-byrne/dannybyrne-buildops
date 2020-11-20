@@ -35,9 +35,9 @@ const UPDATE_SKILL = gql(updateSkill);
 const LIST_SKILLS = gql(listSkills);
 
 /**
- * This component houses all the logic for side effects.  It performs two queries on the employees and skills tables and
- * performs a de-facto table join, in order to match each skill up with the respective employee, and pass the necessary data to view those skills with each employee,
- * and to be able to mutate the data based on employee or skill ID.  I take an approach of rendering certain content base on views that I specify within a useState call.
+ * This component houses all the logic for side effects.  It performs two queries on the employees and skills tables,
+ * performs a de-facto table join, in order to match each skill up with the respective employee. This is passed down to child components to be able to view and
+ * mutate the data based on employee or skill ID.  I take an approach of rendering certain content based on views that I specify within a useState call.
  * Here I have not actually implemented different views for the menu, more of just a placeholder.  You will see a similar pattern throughout the rest of the component tree.
  */
 
@@ -48,7 +48,7 @@ function App() {
     about: "about",
   };
 
-  const [view, setView] = useState(views.home);
+  const [, setView] = useState(views.home);
 
   const {
     loading: employeesLoading,

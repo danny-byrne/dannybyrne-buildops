@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Button, Menu, MenuItem } from "@material-ui/core";
 
+/**This component purely presentational for now.
+ * State change from parent component is passed as props.
+ * If there were different app views, they would be triggered from here. */
+
 export default function AppMenu(props) {
   const { setView, views } = props;
   const [anchorEl, setAnchorEl] = useState(null);

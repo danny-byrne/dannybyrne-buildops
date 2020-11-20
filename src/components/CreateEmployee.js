@@ -9,6 +9,11 @@ import {
   Container,
 } from "@material-ui/core";
 
+/** This component is used to add new employees to the database.
+ * It is simple with two state variables, @firstName and @lastName .
+ * the @addEmployee mutation is passed as a prop from the parent @App component.
+ */
+
 export default function CreateEmployee(props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
