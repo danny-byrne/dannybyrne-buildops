@@ -1,7 +1,7 @@
 1.) cd into the project folder
 2.) Run npm install to install dependencies
 3.) run npm start, and you should be all set.
-4.) to deploy run 'amplify publish'
+4.) to deploy, run 'amplify publish'
 5.) to test, run npm test
 
 the challenge is posted at:
