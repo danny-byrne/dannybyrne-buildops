@@ -130,11 +130,13 @@ export default function Employee(props) {
             aria-describedby="enter-first-name"
             onChange={(e) => setEditedFirstName(e.target.value)}
             value={editedFirstName}
+            color="primary"
           />
           <TextField
             aria-describedby="enter-last-name"
             onChange={(e) => setEditedLastName(e.target.value)}
             value={editedLastName}
+            color="primary"
           />
           <Button
             className="LeftButton"

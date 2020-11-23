@@ -1,19 +1,30 @@
-import {
-  cleanup,
-  render,
-  fireEvent,
-  getByText,
-  screen,
-  getAllByAltText,
-} from "@testing-library/react";
 import { MockedProvider } from "@apollo/client/testing";
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "../App";
-import "@testing-library/jest-dom";
+import App, { LIST_EMPLOYEES, LIST_SKILLS } from "../App";
+import TestRenderer from "react-test-renderer"; // ES6
 
-test("renders page with title", () => {
-  render(<App />);
-  setTimeout(() => {}, 500);
-  expect(screen.getByText(/employees list/i)).toBeInTheDocument();
-});
+const mocks = [
+  {
+    request: {
+      query: LIST_EMPLOYEES,
+    },
+    result: {
+      data: {
+        employee: { id: 1, firsname: "Danny", lastname: "Byrne" },
+      },
+    },
+  },
+];
+
+// const testRenderer = TestRenderer.create(
+//   <MockedProvider mocks={mocks} addTypeName={false}>
+//     <App />
+//   </MockedProvider>
+// );
+// console.log(testRenderer);
+
+// test("renders without error", () => {
+//   TestRenderer.create(
+
+//   );
+// });
