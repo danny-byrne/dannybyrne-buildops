@@ -6,6 +6,8 @@ const views = {
   edit: "edit",
 };
 
+/** This component lists skills that each employee has, and renders view/edit skill based on a state variable that we can change. Handlers are called from those skills which trigger mutations that are passed from parent props.*/
+
 export default function Skill(props) {
   const [editedSkill, seteditedSkill] = useState(props.skill.name);
   const [view, setView] = useState(views.view);
