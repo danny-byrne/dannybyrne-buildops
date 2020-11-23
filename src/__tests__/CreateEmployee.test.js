@@ -1,13 +1,6 @@
-import {
-  cleanup,
-  render,
-  fireEvent,
-  getByText,
-  screen,
-  getAllByAltText,
-} from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import React from "react";
-import ReactDOM from "react-dom";
+
 import CreateEmployee from "../components/CreateEmployee";
 
 test("renders form with two inputs and a submit button", () => {

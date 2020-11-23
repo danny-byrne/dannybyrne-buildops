@@ -14,17 +14,22 @@ const mocks = [
       },
     },
   },
+  {
+    request: {
+      query: LIST_SKILLS,
+    },
+    result: {
+      data: {
+        skills: [],
+      },
+    },
+  },
 ];
 
-// const testRenderer = TestRenderer.create(
-//   <MockedProvider mocks={mocks} addTypeName={false}>
-//     <App />
-//   </MockedProvider>
-// );
-// console.log(testRenderer);
-
-// test("renders without error", () => {
-//   TestRenderer.create(
-
-//   );
-// });
+test("renders without error", () => {
+  TestRenderer.create(
+    <MockedProvider client={mocks} addTypeName={false}>
+      <App />
+    </MockedProvider>
+  );
+});
