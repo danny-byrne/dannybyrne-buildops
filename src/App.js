@@ -106,7 +106,7 @@ function App() {
         <menu>
           <AppMenu setView={setView} views={views} />
         </menu>
-        <h1 id="Title">Employees List</h1>
+        <h1 id="Title">BuildOps</h1>
         <div id="Logo">
           <Logo />
         </div>

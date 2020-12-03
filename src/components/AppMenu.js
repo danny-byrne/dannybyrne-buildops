@@ -34,7 +34,11 @@ export default function AppMenu(props) {
         onClose={handleClose}
       >
         {Object.keys(views).map((e) => {
-          return <MenuItem onClick={() => handleClose(e)}>{e}</MenuItem>;
+          return (
+            <MenuItem key={e} onClick={() => handleClose(e)}>
+              {e}
+            </MenuItem>
+          );
         })}
       </Menu>
     </div>
