@@ -127,12 +127,14 @@ export default function Employee(props) {
       <div id="EmployeeViewEditSave">
         <ButtonGroup>
           <TextField
+            className="EmployeeName"
             aria-describedby="enter-first-name"
             onChange={(e) => setEditedFirstName(e.target.value)}
             value={editedFirstName}
             color="primary"
           />
           <TextField
+            className="EmployeeName"
             aria-describedby="enter-last-name"
             onChange={(e) => setEditedLastName(e.target.value)}
             value={editedLastName}

@@ -14,10 +14,11 @@ export default function Employees(props) {
   const { employees } = props;
   return (
     <div>
-      <h2 className="EmployeesLabel">Employees:</h2>
       <div id="EmployeesContainer">
+        <h2 className="EmployeesLabel">Employees:</h2>
         {employees.map((e) => (
           <Employee
+            key={e.id}
             id={e.id}
             firstName={e.firstname}
             lastName={e.lastname}

@@ -28,11 +28,11 @@ Amplify.configure(awsExports);
 const CREATE_EMPLOYEE = gql(createEmployee);
 const DELETE_EMPLOYEE = gql(deleteEmployee);
 const UPDATE_EMPLOYEE = gql(updateEmployee);
-const LIST_EMPLOYEES = gql(listEmployees);
+export const LIST_EMPLOYEES = gql(listEmployees);
 const CREATE_SKILL = gql(createSkill);
 const DELETE_SKILL = gql(deleteSkill);
 const UPDATE_SKILL = gql(updateSkill);
-const LIST_SKILLS = gql(listSkills);
+export const LIST_SKILLS = gql(listSkills);
 
 /**
  * This component houses all the logic for side effects.  It performs two queries on the employees and skills tables,
