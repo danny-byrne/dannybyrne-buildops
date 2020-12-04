@@ -3,6 +3,55 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+#CreateEmployeeContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+#EmployeesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin-top: 2%;
+}
+
+.EmployeeContainer {
+  flex-direction: column;
+  height: 50%;
+  width: 100%;
+  border: 1px solid black;
+  overflow: scroll;
+}
+
+.EmployeeBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  /* border: 1px solid black; */
+  /* overflow: hidden; */
+}
+
+#Title {
+  position: relative;
+  size: 0.5em;
+  left: 3%;
+}
+
+#Logo {
+  position: relative;
+  top: -10%;
 }
 
 header {
@@ -16,116 +65,7 @@ header {
 menu {
   position: relative;
   top: 10%;
-}
-
-#Title {
-  position: relative;
-  left: 2%;
-}
-
-#Logo {
-  position: relative;
-  top: -10%;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-#CreateEmployeeContainer {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
-
-.EmployeesLabel {
-  position: relative;
-  left: -32%;
-}
-
-#EmployeesContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.EmployeeContainer {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid black;
-  height: 20%;
-  overflow: hidden;
-  width: 75%;
-}
-
-@media only screen and (max-width: 700px) {
-  .EmployeeContainer {
-    flex-direction: column;
-    height: 600px;
-    width: 100%;
-  }
-
-  .EmployeeBox {
-    width: 100%;
-  }
-
-  .SkillsContainer {
-    width: 100%;
-  }
-
-  #Title {
-    size: 0.5em;
-  }
-}
-
-.EmployeeBox {
-  /* position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; */
-  width: 50%;
-  height: 100%;
-  padding-left: 3px;
-  padding-top: 3px;
-}
-
-.EmployeeName {
-  position: relative;
-  left: 4%;
-  margin: 1%;
-}
-
-#EmployeeNameDisplay {
-  display: flex;
-  flex-direction: row;
-}
-
-.EmployeeNameMutations {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 50px;
-  width: 100%;
-  border-radius: 5px;
-}
-
-.AddSkillsBox {
-  display: flex;
-  flex: row;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  float: right;
-}
-
-.SkillsContainer {
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-  width: 50%;
-  height: 100%;
+  left: -2%;
 }
 
 .Skill {
@@ -156,20 +96,105 @@ menu {
   left: 18px;
 }
 
-.Button {
-  width: 15px;
+.SkillsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+  width: 100%;
+  height: 50%;
 }
 
-.LeftButton {
-  height: 50px;
-  width: 100px;
-}
+@media only screen and (min-width: 768px) {
+  Title {
+    position: relative;
+    left: 2%;
+  }
 
-.RightButton {
-  height: 50px;
-  width: 100px;
-}
+  #Logo {
+    position: relative;
+    top: -10%;
+  }
 
-.SkillFill {
-  width: 10%;
+  .EmployeesLabel {
+    position: relative;
+    left: -32%;
+  }
+
+  .EmployeeesContainer {
+    width: 100vw;
+    height: 90%;
+  }
+
+  .EmployeeContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 45vh;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .EmployeeName {
+    position: relative;
+    left: 4%;
+    margin: 1%;
+  }
+
+  .EmployeeBox {
+    width: 49%;
+  }
+
+  .SkillsContainer {
+    width: 49%;
+  }
+
+  #EmployeeNameDisplay {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .EmployeeNameMutations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .AddSkillsBox {
+    display: flex;
+    flex: row;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    float: right;
+  }
+
+  .SkillsContainer {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 50%;
+    height: 100%;
+  }
+
+  .Button {
+    width: 15px;
+  }
+
+  .LeftButton {
+    height: 50px;
+    width: 100px;
+  }
+
+  .RightButton {
+    height: 50px;
+    width: 100px;
+  }
+
+  .SkillFill {
+    width: 10%;
+  }
 }
