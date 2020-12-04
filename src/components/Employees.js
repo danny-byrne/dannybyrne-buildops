@@ -15,7 +15,6 @@ export default function Employees(props) {
   return (
     <div>
       <div id="EmployeesContainer">
-        <h2 className="EmployeesLabel">Employees:</h2>
         {employees.map((e) => (
           <Employee
             key={e.id}

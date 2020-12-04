@@ -9,8 +9,6 @@ import {
   ButtonGroup,
   TextField,
   Avatar,
-  Box,
-  Container,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -21,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
     height: 150,
     left: 7,
     top: 7,
+  },
+  button: {
+    width: 20,
+    height: 10,
   },
 }));
 
@@ -38,7 +40,7 @@ const views = {
  */
 
 export default function Employee(props) {
-  const classes = useStyles();
+  const styles = useStyles();
   const [view, setView] = useState(views.view);
   const [skill, setSkill] = useState("");
   const [editedFirstName, setEditedFirstName] = useState(props.firstName);
@@ -98,48 +100,46 @@ export default function Employee(props) {
     });
   };
   //avatar icon that would eventually receive the URL of an image and display it
-  const avatar = <Avatar className={classes.avatar} src="/broken-image.jpg" />;
+  const avatar = <Avatar className={styles.avatar} src="/broken-image.jpg" />;
   const viewEmployee = (
     <>
       {avatar}
-      <div className="EmployeeViewEditSave">
-        <h3 className="EmployeeName">
-          {props.firstName} {props.lastName}
-        </h3>
-        <ButtonGroup>
-          <Button className="LeftButton" onClick={() => setView(views.edit)}>
-            Edit
-          </Button>
-          <Button
-            className="RightButton"
-            onClick={() => deleteEmployeeHandler()}
-          >
-            Delete
-          </Button>
-        </ButtonGroup>
+      <div id="EmployeeNameDisplay">
+        <h3 className="EmployeeName">{props.firstName}</h3>
+        <h3 className="EmployeeName">{props.lastName}</h3>
       </div>
+      <ButtonGroup>
+        <Button className="LeftButton" onClick={() => setView(views.edit)}>
+          Edit
+        </Button>
+        <Button className="RightButton" onClick={() => deleteEmployeeHandler()}>
+          Delete
+        </Button>
+      </ButtonGroup>
     </>
   );
 
   const editEmployee = (
     <>
       {avatar}
-      <div id="EmployeeViewEditSave">
+      <div id="EmployeeNameDisplay">
+        <TextField
+          className="EmployeeName"
+          aria-describedby="enter-first-name"
+          onChange={(e) => setEditedFirstName(e.target.value)}
+          value={editedFirstName}
+          color="primary"
+        />
+        <TextField
+          className="EmployeeName"
+          aria-describedby="enter-last-name"
+          onChange={(e) => setEditedLastName(e.target.value)}
+          value={editedLastName}
+          color="primary"
+        />
+      </div>
+      <div id="EmployeeNameMutations">
         <ButtonGroup>
-          <TextField
-            className="EmployeeName"
-            aria-describedby="enter-first-name"
-            onChange={(e) => setEditedFirstName(e.target.value)}
-            value={editedFirstName}
-            color="primary"
-          />
-          <TextField
-            className="EmployeeName"
-            aria-describedby="enter-last-name"
-            onChange={(e) => setEditedLastName(e.target.value)}
-            value={editedLastName}
-            color="primary"
-          />
           <Button
             className="LeftButton"
             onClick={() => updateEmployeeHandler()}
@@ -156,54 +156,50 @@ export default function Employee(props) {
 
   const addSkillsBox = (
     <div className="AddSkillsBox">
-      <Box>
-        <FormControl>
-          <InputLabel htmlFor="my-input"></InputLabel>
-          <Input
-            aria-describedby="skill-input"
-            onChange={(e) => setSkill(e.target.value)}
-            value={skill}
-          />
-          <FormHelperText id="employee-name-input">
-            Enter New Employee Skill
-          </FormHelperText>
-        </FormControl>
-        <br />
-        <Button
-          float="right"
-          variant="outlined"
-          color="primary"
-          onClick={() => addSkillHandler()}
-        >
-          Add Skill
-        </Button>
-      </Box>
+      <FormControl>
+        <InputLabel htmlFor="my-input"></InputLabel>
+        <Input
+          aria-describedby="skill-input"
+          onChange={(e) => setSkill(e.target.value)}
+          value={skill}
+        />
+        <FormHelperText id="employee-name-input">
+          Enter {props.firstName} {props.lastName}'s Skills
+        </FormHelperText>
+      </FormControl>
+      <Button
+        className="RightButton"
+        float="right"
+        variant="outlined"
+        color="primary"
+        onClick={() => addSkillHandler()}
+      >
+        Add Skill
+      </Button>
     </div>
   );
   //determine whether to render view or edit
   const employeeView = view === views.view ? viewEmployee : editEmployee;
 
   return (
-    <div className="EmployeeContainer" key={props.id}>
+    <div className="EmployeeContainer">
       <div className="EmployeeBox">{employeeView}</div>
-      {addSkillsBox}
       <div className="SkillsContainer">
-        <Container>
-          <h3>
-            {props.firstName} {props.lastName}'s Skills:
-          </h3>
-          {props.skills !== null &&
-            props.skills.map((skill) => {
-              return (
-                <Skill
-                  key={skill.id}
-                  skill={skill}
-                  updateSkillHandler={updateSkillHandler}
-                  deleteSkillHandler={deleteSkillHandler}
-                />
-              );
-            })}
-        </Container>
+        {addSkillsBox}
+        <h3>
+          {props.firstName} {props.lastName}'s Skills:
+        </h3>
+        {props.skills !== null &&
+          props.skills.map((skill) => {
+            return (
+              <Skill
+                key={skill.id}
+                skill={skill}
+                updateSkillHandler={updateSkillHandler}
+                deleteSkillHandler={deleteSkillHandler}
+              />
+            );
+          })}
       </div>
     </div>
   );

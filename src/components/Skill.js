@@ -50,7 +50,6 @@ export default function Skill(props) {
         onChange={(e) => seteditedSkill(e.target.value)}
         value={editedSkill}
       />
-
       <ButtonGroup>
         <div className="SkillButtonContainer">
           <Button className="LeftButton" onClick={() => updateSkillHandler()}>

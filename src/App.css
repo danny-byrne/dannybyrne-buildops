@@ -1,5 +1,4 @@
 .App {
-  /* text-align: center; */
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -8,6 +7,7 @@
 
 header {
   width: 100vw;
+  height: 10%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,17 +15,17 @@ header {
 
 menu {
   position: relative;
-  top: 10px;
+  top: 10%;
 }
 
 #Title {
   position: relative;
-  left: 25px;
+  left: 2%;
 }
 
 #Logo {
   position: relative;
-  top: -12px;
+  top: -10%;
 }
 
 .App-link {
@@ -41,7 +41,7 @@ menu {
 
 .EmployeesLabel {
   position: relative;
-  left: 20px;
+  left: -32%;
 }
 
 #EmployeesContainer {
@@ -55,14 +55,24 @@ menu {
   display: flex;
   flex-direction: row;
   border: 1px solid black;
-  height: 30%;
-  overflow: scroll;
+  height: 20%;
+  overflow: hidden;
+  width: 75%;
 }
 
 @media only screen and (max-width: 700px) {
   .EmployeeContainer {
     flex-direction: column;
     height: 600px;
+    width: 100%;
+  }
+
+  .EmployeeBox {
+    width: 100%;
+  }
+
+  .SkillsContainer {
+    width: 100%;
   }
 
   #Title {
@@ -71,10 +81,11 @@ menu {
 }
 
 .EmployeeBox {
-  position: relative;
+  /* position: relative;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  justify-content: center; */
+  width: 50%;
   height: 100%;
   padding-left: 3px;
   padding-top: 3px;
@@ -82,33 +93,39 @@ menu {
 
 .EmployeeName {
   position: relative;
-  left: 25px;
-  width: 40%;
+  left: 4%;
+  margin: 1%;
 }
 
-.EmployeeViewEditSave {
+#EmployeeNameDisplay {
+  display: flex;
+  flex-direction: row;
+}
+
+.EmployeeNameMutations {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 50px;
   width: 100%;
-  /* border: 1px solid rgb(73, 43, 141); */
   border-radius: 5px;
 }
 
 .AddSkillsBox {
+  display: flex;
+  flex: row;
   position: relative;
-  top: 33%;
   text-align: center;
-  width: 20%;
-  height: 100px;
+  width: 100%;
   float: right;
 }
 
 .SkillsContainer {
+  display: flex;
+  flex-direction: column;
   overflow: scroll;
   width: 50%;
-  border: 2px solid rgb(73, 43, 141);
+  height: 100%;
 }
 
 .Skill {
