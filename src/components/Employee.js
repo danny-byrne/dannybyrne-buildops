@@ -168,8 +168,8 @@ export default function Employee(props) {
         </FormHelperText>
       </FormControl>
       <Button
-        className="RightButton"
-        float="right"
+        className="EnterSkillButton"
+        // float="right"
         variant="outlined"
         color="primary"
         onClick={() => addSkillHandler()}

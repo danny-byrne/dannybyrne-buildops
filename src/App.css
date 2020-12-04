@@ -23,10 +23,11 @@
 
 .EmployeeContainer {
   flex-direction: column;
-  height: 50%;
+  /* height: 50%; */
   width: 100%;
   border: 1px solid black;
   overflow: scroll;
+  flex-shrink: 0;
 }
 
 .EmployeeBox {
@@ -37,8 +38,8 @@
   align-items: center;
   width: 100%;
   height: 50%;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
   /* border: 1px solid black; */
   /* overflow: hidden; */
 }
@@ -103,6 +104,21 @@ menu {
   overflow: scroll;
   width: 100%;
   height: 50%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+#EmployeeNameDisplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.EnterSkillButton {
+  height: 50%;
+  width: 35;
+  position: relative;
+  top: 19%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -149,11 +165,6 @@ menu {
     width: 49%;
   }
 
-  #EmployeeNameDisplay {
-    display: flex;
-    flex-direction: row;
-  }
-
   .EmployeeNameMutations {
     display: flex;
     flex-direction: column;
@@ -165,11 +176,11 @@ menu {
 
   .AddSkillsBox {
     display: flex;
-    flex: row;
+    flex-direction: row;
     position: relative;
+    left: 15%;
     text-align: center;
     width: 100%;
-    float: right;
   }
 
   .SkillsContainer {
